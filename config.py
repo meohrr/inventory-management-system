@@ -1,7 +1,10 @@
-class Config:
-    MYSQL_HOST = "localhost"
-    MYSQL_USER = "root"
-    MYSQL_PASSWORD = "0130*catsH"
-    MYSQL_DB = "inventory"
+import os
 
-    SECRET_KEY = "change_this_to_a_random_secret_key"
+class Config:
+    MYSQL_HOST = os.getenv("MYSQL_HOST")
+    MYSQL_USER = os.getenv("MYSQL_USER")
+    MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
+    MYSQL_DB = os.getenv("MYSQL_DB")
+
+    SECRET_KEY = os.getenv("SECRET_KEY")
+
